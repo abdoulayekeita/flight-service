@@ -1,0 +1,8 @@
+{
+  "name": "she flight service",
+  "buildpacks": [
+    {
+      "url": "heruku/maven"
+    }
+  ]
+}
