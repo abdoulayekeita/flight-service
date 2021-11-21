@@ -32,4 +32,5 @@ public class Flight {
     private String distance;
     @ApiModelProperty(notes = " the actuality of an offer")
     private String actual;
+
 }
