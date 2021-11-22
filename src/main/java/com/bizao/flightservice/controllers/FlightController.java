@@ -21,7 +21,7 @@ import static org.springframework.http.HttpStatus.OK;
 public class FlightController {
     private final FlightService flightService;
 
-    @ApiOperation(value = "Returns flights ", notes = "Brings back the list of prices found by our users during the most recent 48 hours according to the filters used", response = Flight.class)
+    @ApiOperation(value = "Returns flights collection", notes = "Brings back the list of prices found by our users during the most recent 48 hours according to the filters used", response = Flight.class)
     @GetMapping("/flight_prices_history/{origin}/{destination}")
     public ResponseEntity<Response> getFlightPricesHistory(@PathVariable("origin") String origin, @PathVariable("destination") String destination){
         return ResponseEntity
@@ -36,7 +36,7 @@ public class FlightController {
                 );
     }
 
-    @ApiOperation(value = "Returns flights", notes = "Brings back the prices for each day of a month, grouped together by number of transfers.", response = Flight.class)
+    @ApiOperation(value = "Returns flights collection", notes = "Brings back the prices for each day of a month, grouped together by number of transfers.", response = Flight.class)
     @GetMapping("/flight_calendar_prices_month/{origin}/{destination}/{month}")
     public ResponseEntity<Response> getFlightCalendarOfPricesForMonth(@PathVariable("origin") String origin, @PathVariable("destination") String destination, @PathVariable("month") String month){
         return ResponseEntity
@@ -51,7 +51,7 @@ public class FlightController {
                 );
     }
 
-    @ApiOperation(value = "Returns flight ", notes = "Brings back the prices for the directions between the nearest to the target cities.", response = Flight.class)
+    @ApiOperation(value = "Returns flight collection", notes = "Brings back the prices for the directions between the nearest to the target cities.", response = Flight.class)
     @GetMapping("/flight_prices_alternative_direction/{origin}/{destination}/{depart_date}")
     public ResponseEntity<Response> getFlightPricesForAlternativeDirection(@PathVariable("origin") String origin, @PathVariable("destination") String destination, @PathVariable("depart_date") String depart_date){
         return ResponseEntity
